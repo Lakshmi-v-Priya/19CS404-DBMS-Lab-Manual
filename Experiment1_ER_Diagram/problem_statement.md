@@ -67,28 +67,44 @@ The Central Library wants to manage book lending and cultural events.
 *Paste or attach your diagram here*  
 ![ER Diagram](er_diagram_library.png)
 
+<img width="500" height="394" alt="er diagram library management" src="https://github.com/user-attachments/assets/8a57fd42-61ae-42a7-acf7-3b1b1b8b2be5" />
+
+
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| Entity         | Attributes (PK, FK)                                                 | Notes                                    |
+| -------------- | ------------------------------------------------------------------- | ---------------------------------------- |
+| Readers        | User\_ID (PK), Firstname, Lastname, Name, Email, Phone\_no, Address | Stores details of library readers        |
+| Staff          | Staff\_Id (PK), Name                                                | Staff who manage and track books         |
+| Books          | ISBN (PK), Title, Author, Price, Category, Edition                  | Details of each book in the library      |
+| Publisher      | Publisher\_Id (PK), Name, YearOfPublication                         | Publisher information for books          |
+| Reports        | User\_Id (FK), Book\_No, IssueReturn                                | Logs book issue and return for each user |
+| Authentication | Staff\_Id (FK), Password, Login                                     | Handles staff login credentials          |
+
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| Relationship    | Cardinality | Participation    | Notes                                                                                |
+| --------------- | ----------- | ---------------- | ------------------------------------------------------------------------------------ |
+| Manages         | 1 : N       | Total on Reports | One staff member manages many reports                                                |
+| Keeps track of  | 1 : N       | Total on Readers | One staff member keeps track of many readers                                         |
+| Issues/Returns  | M : N       | Optional on both | A reader can issue/return many books; a book can be issued by many readers over time |
+| Publishes       | 1 : N       | Total on Books   | One publisher can publish many books; each book has exactly one publisher            |
+| Login           | 1 : 1       | Total on both    | Each staff member has one login record for authentication                            |
+| Generate Report | M : N       | Total on both    | Each report can involve multiple books for issue/return                              |
+
 
 ### Assumptions
-- 
-- 
-- 
+*A book is uniquely identified by its ISBN.
+
+*Each reader has a unique User_ID.
+
+*Each staff member has a unique Staff_Id and one login credential.
+
+*A report entry logs a single issue or return transaction, linking a reader (User_ID) and a book (Book_No).
+
+*YearOfPublication belongs to the publisher entity but refers to the publication year of each book they publish.
 
 ---
 
