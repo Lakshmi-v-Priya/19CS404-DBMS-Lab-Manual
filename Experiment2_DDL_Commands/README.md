@@ -106,6 +106,7 @@ CREATE TABLE Table_Name (
 **Question 1**
 --
 Create a table named Locations with the following columns:
+
 *LocationID as INTEGER
 
 *LocationName as TEXT
@@ -152,6 +153,7 @@ Amount REAL check(Amount>0)
 **Question 3**
 ---
 Create a table named Products with the following constraints:
+
 *ProductID as INTEGER should be the primary key.
 
 *ProductName as TEXT should be unique and not NULL.
@@ -213,6 +215,7 @@ ADD COLUMN Address VARCHAR(100);
 **Question 6**
 ---
 Create a new table named item with the following specifications and constraints:
+
 *item_id as TEXT and as primary key.
 
 *item_desc as TEXT.
@@ -268,9 +271,11 @@ Write a SQL query for adding a new column named "email" with the datatype VARCHA
 Sample table: customer
 
  customer_id |   cust_name    |    city    | grade | salesman_id 
--------------+----------------+------------+-------+-------------
+
         3002 | Nick Rimando   | New York   |   100 |        5001
+        
         3007 | Brad Davis     | New York   |   200 |        5001
+        
         3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
@@ -306,6 +311,7 @@ VALUES ('978-6655443321','Big Data Analytics', 'Karen Adams');
 **Question 10**
 ---
 Create a table named Invoices with the following constraints:
+
 *InvoiceID as INTEGER should be the primary key.
 
 *InvoiceDate as DATE.
