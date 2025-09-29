@@ -180,11 +180,11 @@ StockQuantity INTEGER check(StockQuantity>0)
 ---
 Insert the following employees into the Employee table:
 
-EmployeeID  Name        Position    Department  Salary
+EmployeeID | Name   |   Position  |  Department | Salary
 
-2           John Smith  Developer   IT          75000
+2    |  John Smith | Developer  | IT   |  75000
 
-3           Anna Bell   Designer    Marketing   68000
+3    |  Anna Bell  | Designer  |  Marketing  |  68000
 
 ```sql
 insert into Employee
@@ -336,6 +336,9 @@ FOREIGN KEY(OrderID) references Orders(OrderID)
 **Output:**
 
 <img width="1298" height="186" alt="image" src="https://github.com/user-attachments/assets/03be7394-2af3-4e65-b303-bb34144bcfc3" />
+
+<img width="1267" height="397" alt="image" src="https://github.com/user-attachments/assets/134ee8c7-d8a5-468b-9bce-5c4758cb0ae1" />
+
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
