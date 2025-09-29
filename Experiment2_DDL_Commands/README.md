@@ -337,7 +337,8 @@ FOREIGN KEY(OrderID) references Orders(OrderID)
 
 <img width="1298" height="186" alt="image" src="https://github.com/user-attachments/assets/03be7394-2af3-4e65-b303-bb34144bcfc3" />
 
-<img width="1267" height="397" alt="image" src="https://github.com/user-attachments/assets/134ee8c7-d8a5-468b-9bce-5c4758cb0ae1" />
+## GRADES :
+<img width="1087" height="78" alt="image" src="https://github.com/user-attachments/assets/38580650-2441-428b-965d-6886f5aaeb6d" />
 
 
 ## RESULT
