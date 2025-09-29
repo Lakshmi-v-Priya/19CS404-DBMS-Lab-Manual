@@ -107,7 +107,9 @@ CREATE TABLE Table_Name (
 --
 Create a table named Locations with the following columns:
 *LocationID as INTEGER
+
 *LocationName as TEXT
+
 *Address as TEXT
 
 ```sql
@@ -127,8 +129,11 @@ Address TEXT
 Create a table named Invoices with the following constraints:
 
 *InvoiceID as INTEGER should be the primary key.
+
 *InvoiceDate as DATE.
+
 *DueDate as DATE should be greater than the InvoiceDate.
+
 *Amount as REAL should be greater than 0.
 
 ```sql
@@ -148,8 +153,11 @@ Amount REAL check(Amount>0)
 ---
 Create a table named Products with the following constraints:
 *ProductID as INTEGER should be the primary key.
+
 *ProductName as TEXT should be unique and not NULL.
+
 *Price as REAL should be greater than 0.
+
 *StockQuantity as INTEGER should be non-negative.
 
 ```sql
@@ -171,8 +179,9 @@ StockQuantity INTEGER check(StockQuantity>0)
 Insert the following employees into the Employee table:
 
 EmployeeID  Name        Position    Department  Salary
-----------  ----------  ----------  ----------  ----------
+
 2           John Smith  Developer   IT          75000
+
 3           Anna Bell   Designer    Marketing   68000
 
 ```sql
@@ -205,11 +214,17 @@ ADD COLUMN Address VARCHAR(100);
 ---
 Create a new table named item with the following specifications and constraints:
 *item_id as TEXT and as primary key.
+
 *item_desc as TEXT.
+
 *rate as INTEGER.
+
 *icom_id as TEXT with a length of 4.
+
 *icom_id is a foreign key referencing com_id in the company table.
+
 *The foreign key should cascade updates and deletes.
+
 *item_desc and rate should not accept NULL.
 
 ```sql
@@ -273,7 +288,8 @@ add column email VARCHAR(100);
 Insert the below data into the Books table, allowing the Publisher and Year columns to take their default values.
 
 ISBN             Title                 Author
----------------  --------------------  ---------------
+
+
 978-6655443321   Big Data Analytics    Karen Adams
 
 Note: The Publisher and Year columns will use their default values.
@@ -291,9 +307,13 @@ VALUES ('978-6655443321','Big Data Analytics', 'Karen Adams');
 ---
 Create a table named Invoices with the following constraints:
 *InvoiceID as INTEGER should be the primary key.
+
 *InvoiceDate as DATE.
+
 *Amount as REAL should be greater than 0.
+
 *DueDate as DATE should be greater than the InvoiceDate.
+
 *OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
