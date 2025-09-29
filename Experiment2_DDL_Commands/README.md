@@ -105,10 +105,14 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Locations with the following columns:
 
 ```sql
--- Paste your SQL code below for Question 1
+create TABLE Locations(
+LocationID INTEGER,
+LocationName TEXT,
+Address TEXT
+);
 ```
 
 **Output:**
