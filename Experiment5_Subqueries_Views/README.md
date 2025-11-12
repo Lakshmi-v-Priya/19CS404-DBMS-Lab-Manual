@@ -38,124 +38,248 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to Retrieve the medications with dosages equal to the highest dosage
+
+Table Name: Medications (attributes: medication_id, medication_name, dosage)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT * FROM  Medications
+WHERE dosage IN (SELECT MAX(dosage) FROM Medications);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="848" height="334" alt="image" src="https://github.com/user-attachments/assets/752f21e2-b74d-4ddd-b43b-db2106f9076b" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+From the following tables, write a SQL query to find those salespeople who earned the maximum commission. Return ord_no, purch_amt, ord_date, and salesman_id.
+
+salesman table
+
+name             type
+---------------  ---------------
+salesman_id      numeric(5)
+name                 varchar(30)
+city                    varchar(15)
+commission       decimal(5,2)
+
+orders table
+
+name             type
+---------------  --------
+order_no         int
+purch_amt        real
+order_date       text
+customer_id      int
+salesman_id      int
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT ord_no,purch_amt,ord_date,salesman_id FROM orders
+WHERE salesman_id IN(SELECT salesman_id FROM salesman
+WHERE commission=(SELECT MAX(commission) FROM salesman));
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="994" height="403" alt="image" src="https://github.com/user-attachments/assets/d20a1781-1f2d-4ea5-92be-3bfc8ab19554" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to List departments with names longer than the average length
+
+Departments Table (attributes: department_id, department_name)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT * FROM Departments
+WHERE LENGTH(department_name)>(SELECT AVG(LENGTH(department_name)) FROM Departments);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="534" height="324" alt="image" src="https://github.com/user-attachments/assets/c422b6dc-4813-48d3-bd96-ddd125caa156" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose AGE is LESS than $30
+
+Sample table: CUSTOMERS
+
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+
+1          Ramesh     32              Ahmedabad     2000
+2          Khilan        25              Delhi                 1500
+3          Kaushik      23              Kota                  2000
+4          Chaitali       25             Mumbai            6500
+5          Hardik        27              Bhopal              8500
+6          Komal         22              Hyderabad       4500
+
+7           Muffy          24              Indore            10000
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT * FROM CUSTOMERS
+WHERE AGE<30;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1183" height="513" alt="image" src="https://github.com/user-attachments/assets/d3b1fce0-398b-4cbb-a615-c66b5ee1c6c3" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 2.5 Lakh
+
+Employee Table
+
+name             type
+
+------------   ---------------
+
+id                    INTEGER
+
+name              TEXT
+
+age                 INTEGER
+
+city                 TEXT
+
+income           INTEGER
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT * FROM Employee
+WHERE age<(SELECT AVG(age) FROM Employee WHERE income >250000);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1235" height="470" alt="image" src="https://github.com/user-attachments/assets/97f9dcb7-f143-4825-8752-3561136f4a0d" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Retrieve the names and cities of customers who have the same city as customers with IDs 3 and 7
+
+SAMPLE TABLE: customer
+
+name             type
+---------------  ---------------
+id               INTEGER
+name             TEXT
+city             TEXT
+email            TEXT
+phone            INTEGER
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT name,city FROM customer
+WHERE city IN(SELECT city FROM customer WHERE id IN(3,7));
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="532" height="380" alt="image" src="https://github.com/user-attachments/assets/6dd60f49-a628-4eaa-97bd-8ff20f8d35db" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query that retrieves the names of students and their corresponding grades, where the grade is equal to the minimum grade achieved in each subject.
+
+Sample table: GRADES (attributes: student_id, student_name, subject, grade)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT student_name, grade FROM GRADES g
+WHERE grade=(SELECT MIN(grade) FROM GRADES 
+        WHERE subject=g.subject);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="717" height="358" alt="image" src="https://github.com/user-attachments/assets/3b4c8a42-b1c1-45e5-90ed-4a373ce61aba" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is EQUAL TO $1500.
+
+Sample table: CUSTOMERS
+
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+
+1          Ramesh     32              Ahmedabad     2000
+2          Khilan        25              Delhi                 1500
+3          Kaushik      23              Kota                  2000
+4          Chaitali       25             Mumbai            6500
+5          Hardik        27              Bhopal              8500
+6          Komal         22              Hyderabad       4500
+
+7           Muffy          24              Indore            10000
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT * FROM CUSTOMERS
+WHERE SALARY = 1500;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1188" height="267" alt="image" src="https://github.com/user-attachments/assets/17b019c4-2cd0-43a4-9128-0a25dcb0f1ab" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is greater than $1500.
+
+Sample table: CUSTOMERS
+
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+
+1          Ramesh     32              Ahmedabad     2000
+2          Khilan        25              Delhi                 1500
+3          Kaushik      23              Kota                  2000
+4          Chaitali       25             Mumbai            6500
+5          Hardik        27              Bhopal              8500
+6          Komal         22              Hyderabad       4500
+
+7           Muffy          24              Indore            10000
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT * FROM CUSTOMERS
+WHERE SALARY > 1500;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1187" height="536" alt="image" src="https://github.com/user-attachments/assets/5bab2bea-de1e-4825-865f-8d13a1aa23e8" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+From the following tables, write a SQL query to find all the orders generated in New York city. Return ord_no, purch_amt, ord_date, customer_id and salesman_id.
+
+SALESMAN TABLE
+
+name               type
+-----------        ----------
+salesman_id  numeric(5)
+name             varchar(30)
+city                 varchar(15)
+commission   decimal(5,2)
+
+ORDERS TABLE
+
+name            type
+----------      ----------
+ord_no          int
+purch_amt    real
+ord_date       text
+customer_id  int
+salesman_id  int
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT * FROM ORDERS
+WHERE salesman_id IN( SELECT salesman_id FROM SALESMAN WHERE city="New York");
 ```
 
 **Output:**
 
-![Output10](output.png)
-
+<img width="1226" height="412" alt="image" src="https://github.com/user-attachments/assets/e7308fa0-4d51-40fa-9814-413406e18569" />
 
 ## RESULT
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
