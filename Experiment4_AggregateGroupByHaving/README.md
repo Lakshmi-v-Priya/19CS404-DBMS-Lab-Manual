@@ -230,6 +230,7 @@ HAVING COUNT(*)>3;
 ```
 
 **Output:**
+
 <img width="581" height="266" alt="image" src="https://github.com/user-attachments/assets/aab18a6d-ed83-41eb-9433-96ebd80efd30" />
 
 ## RESULT
